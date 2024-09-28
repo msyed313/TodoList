@@ -21,7 +21,7 @@ const AddTask = ({ navigation }) => {
     let db = await sqlite.openDatabase({ name: 'demo.db' });
     db.transaction(function (t) {
       t.executeSql(
-        'INSERT INTO List (item) VALUES (?)',
+        'INSERT INTO Task (item) VALUES (?)',
         [item],
         (tx, resultSet) => {
           console.log(JSON.stringify(resultSet));

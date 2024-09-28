@@ -17,7 +17,7 @@ const EditTask = ({navigation,route}) => {
     let db = await sqlite.openDatabase({ name: 'demo.db' });
     db.transaction(function (t) {
       t.executeSql(
-        `update List set item =? Where id=${id}`,
+        `update Task set item =? Where id=${id}`,
         [item],
         (tx, resultSet) => {
           console.log(JSON.stringify(resultSet));
@@ -36,7 +36,7 @@ const EditTask = ({navigation,route}) => {
     let db = await sqlite.openDatabase({ name: 'demo.db' });
     db.transaction(function (t) {
       t.executeSql(
-        'select item from List WHERE id = ? ',
+        'select item from Task WHERE id = ? ',
         [id],
         (tx, resultSet) => {
           for (let i = 0; i < resultSet.rows.length; i++) {

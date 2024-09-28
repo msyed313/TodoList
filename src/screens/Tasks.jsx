@@ -15,7 +15,7 @@ const Tasks = ({ navigation }) => {
     let db = await sqlite.openDatabase({ name: 'demo.db' });
     db.transaction(function (t) {
       t.executeSql(
-        'SELECT * FROM List',
+        'SELECT * FROM Task',
         [],
         (tx, resultSet) => {
           let taskList = [];
@@ -36,7 +36,7 @@ const Tasks = ({ navigation }) => {
     let db = await sqlite.openDatabase({ name: 'demo.db' });
     db.transaction(tx => {
       tx.executeSql(
-        'DELETE FROM List WHERE id = ?',
+        'DELETE FROM Task WHERE id = ?',
         [id],
         (tx, results) => {
           if (results.rowsAffected > 0) {

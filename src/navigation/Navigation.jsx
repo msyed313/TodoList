@@ -6,6 +6,7 @@ import Home from '../screens/Home'
 import AddTask from '../screens/AddTask'
 import Tasks from '../screens/Tasks'
 import EditTask from '../screens/EditTask'
+import GetTasks from '../screens/GetTasks'
 const stack=createNativeStackNavigator()
 const Navigation = () => {
   return (
@@ -15,6 +16,7 @@ const Navigation = () => {
          <stack.Screen name='addtask' component={AddTask}/>
          <stack.Screen name='tasks' component={Tasks}/>
          <stack.Screen name='edit' component={EditTask}/>
+         <stack.Screen name='get' component={GetTasks}/>
        </stack.Navigator>
     </NavigationContainer>
   )
